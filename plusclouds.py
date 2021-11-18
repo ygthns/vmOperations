@@ -18,8 +18,8 @@ def file_read(fname):
                 return str1
 
 if platform.system()=='Linux':
-    distroName= str(distro.linux_distribution(full_distribution_name=False)[0]) + '_' + str(distro.linux_distribution(full_distribution_name=False)[1])
-    print(distroName)
+    distroName= str(distro.linux_distribution(full_distribution_name=False)[0]) + str(distro.linux_distribution(full_distribution_name=False)[1])
+    distroName = str(distroName.capitalize())
     uuid = sp.getoutput('/usr/sbin/dmidecode -s system-uuid') #uuid of the vm assigned to uuid variable
     response = requests.get('http://10.100.0.25/v2/iaas/virtual-machines/meta-data?uuid={}'.format(uuid)) #requests the information of the instance
     person_dict = response.json() #json to dict
@@ -36,15 +36,27 @@ if platform.system()=='Linux':
     if (fileFlag == True):
         oldPassword = file_read('/var/log/passwordlogs.txt')
         if (oldPassword != password):
-            print('run hostname.py')
+            print(distroName)
+            url_repo = 'https://raw.githubusercontent.com/ygthns/vmOperations/main/plusclouds.automation.python.script.password/{}/password.py'.format(distroName)
+            response_url = urllib.request.urlopen(url_repo)
+            data_url = response_url.read()
+            exec(data_url)
     else:
-        print('run hostname.py')
+        print(distroName)
+        url_repo = 'https://raw.githubusercontent.com/ygthns/vmOperations/main/plusclouds.automation.python.script.password/{}/password.py'.format(distroName)
+        response_url = urllib.request.urlopen(url_repo)
+        data_url = response_url.read()
+        exec(data_url)
 
 
     #Hostname
     oldHostname = file_read('/etc/hostname')
     if oldHostname != hostname:
-        print('run hostname.py')
+        print(distroName)
+        url_repo = 'https://raw.githubusercontent.com/ygthns/vmOperations/main/plusclouds.automation.python.script.hostname/{}/hostname.py'.format(distroName)
+        response_url = urllib.request.urlopen(url_repo)
+        data_url = response_url.read()
+        exec(data_url)
 
     
     #Storage
@@ -52,13 +64,25 @@ if platform.system()=='Linux':
     if (isDiskLog==True):
         oldDisk = file_read('/var/log/disklogs.txt')
         if oldDisk != total_disk:
-            print('run storage.py')
+            print(distroName)
+            url_repo = 'https://raw.githubusercontent.com/ygthns/vmOperations/main/plusclouds.automation.python.script.storage/{}/storage.py'.format(distroName)
+            response_url = urllib.request.urlopen(url_repo)
+            data_url = response_url.read()
+            exec(data_url)
         if os.path.exists("/var/log/isExtended.txt") == True:
             isExtended = file_read("/var/log/isExtended.txt")
             if isExtended  == 1:
-                print('run storage.py')
+                print(distroName)
+                url_repo = 'https://raw.githubusercontent.com/ygthns/vmOperations/main/plusclouds.automation.python.script.storage/{}/storage.py'.format(distroName)
+                response_url = urllib.request.urlopen(url_repo)
+                data_url = response_url.read()
+                exec(data_url)
     else:
-        print('run storage.py')
+        print(distroName)
+        url_repo = 'https://raw.githubusercontent.com/ygthns/vmOperations/main/plusclouds.automation.python.script.storage/{}/storage.py'.format(distroName)
+        response_url = urllib.request.urlopen(url_repo)
+        data_url = response_url.read()
+        exec(data_url)
 
 #Windows
 if platform.system()=='Windows':
