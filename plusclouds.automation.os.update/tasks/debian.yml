@@ -1,0 +1,6 @@
+
+- name: Update cache and upgrade if specified.
+  become: true
+  apt:
+    update_cache: yes
+    upgrade: "{{upgrade}}"

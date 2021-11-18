@@ -1,0 +1,12 @@
+
+- name: Update cache 
+  become: true
+  yum:
+    update_cache: yes
+
+- name: Upgrade all packages
+  become: true
+  yum:
+    name: '*'
+    state: latest
+  when: upgrade

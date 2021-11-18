@@ -1,0 +1,22 @@
+
+- name: Set the category_names variable
+  set_fact:
+    category_names: '*'
+  when: category_names == 'all'
+
+- name: Search for specified Windows updates
+  win_updates:
+    category_names: "{{category_names}}"
+    state: searched
+  register: updates_to_install
+
+- debug:
+    msg: "{{updates_to_install}}"
+- win_reboot:
+  when: updates_to_install.reboot_required
+
+- name: Install specified updates with automatic reboots
+  win_updates:
+    category_names: "{{category_names}}"
+    reboot: yes
+    reboot_timeout: 3600

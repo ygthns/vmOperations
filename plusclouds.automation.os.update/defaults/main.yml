@@ -1,0 +1,3 @@
+---
+upgrade: "yes"
+category_names: "all" #// this variable can be set as CriticalUpdates,SecurityUpdates,UpdateRollups#
