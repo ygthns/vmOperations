@@ -16,7 +16,7 @@ def file_read(fname):
 
 
 uuid = sp.getoutput('/usr/sbin/dmidecode -s system-uuid') #uuid of the vm assigned to uuid variable
-response = requests.get('http://10.100.0.25/v2/iaas/virtual-machines/meta-data?uuid={}'.format(uuid)) #requests the information of the instance
+response = requests.get('https://api.plusclouds.com/v2/iaas/virtual-machines/meta-data?uuid={}'.format(uuid)) #requests the information of the instance
 person_dict = response.json() #json to dict
 password= person_dict['data']['password']
 isChanged = False
