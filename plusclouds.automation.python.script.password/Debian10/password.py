@@ -2,6 +2,7 @@ import requests
 import json
 import os
 import subprocess as sp
+from hashlib import sha256
 
 #This function takes filename as input, and then read it and return as a string variable
 def file_read(fname):
@@ -16,9 +17,11 @@ def file_read(fname):
 
 
 uuid = sp.getoutput('/usr/sbin/dmidecode -s system-uuid') #uuid of the vm assigned to uuid variable
-response = requests.get('http://10.100.0.25/v2/iaas/virtual-machines/meta-data?uuid={}'.format(uuid)) #requests the information of the instance
+response = requests.get('https://api.plusclouds.com/v2/iaas/virtual-machines/meta-data?uuid={}'.format(uuid)) #requests the information of the instance
 person_dict = response.json() #json to dict
 password= person_dict['data']['password']
+readablePassword = password
+password = sha256(''.encode()).hexdigest()
 isChanged = False
 fileFlag = os.path.exists('/var/log/passwordlogs.txt')
 
@@ -39,6 +42,6 @@ else:
     f.close()
 
 if (isChanged == True):
-    cmd = "bash -c \"echo -e '{}\\n{}' | passwd root\"".format(password, password)
+    cmd = "bash -c \"echo -e '{}\\n{}' | passwd root\"".format(readablePassword, readablePassword)
     sp.check_call(cmd, shell=True)
     print('Password has been updated successfully')

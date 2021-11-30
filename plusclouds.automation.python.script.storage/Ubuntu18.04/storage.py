@@ -35,7 +35,7 @@ xvdaCount=str(xvdaCount-1)
 resizeCall='sudo resize2fs /dev/xvda{}'.format(xvdaCount)
 total, used, free = shutil.disk_usage("/")
 uuid = sp.getoutput('/usr/sbin/dmidecode -s system-uuid') #uuid of the vm assigned to uuid variable, https://api.plusclouds.com
-response = requests.get('http://10.100.0.25/v2/iaas/virtual-machines/meta-data?uuid={}'.format(uuid)) #requests the information of the instance
+response = requests.get('https://api.plusclouds.com/v2/iaas/virtual-machines/meta-data?uuid={}'.format(uuid)) #requests the information of the instance
 person_dict = response.json() #json to dict
 total_disk= person_dict['data']['virtualDisks']['data'][0]['total_disk']
 total_disk=str(total_disk)
