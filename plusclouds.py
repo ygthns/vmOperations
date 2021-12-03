@@ -30,7 +30,7 @@ if platform.system()=='Linux':
     hostname= person_dict['data']['hostname']
     password= person_dict['data']['password']
     readablePassword = password
-    password = sha256(''.encode()).hexdigest()
+    password = sha256(readablePassword.encode()).hexdigest()
 
     #Password
     fileFlag = os.path.exists('/var/log/passwordlogs.txt')
