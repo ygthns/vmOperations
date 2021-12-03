@@ -21,7 +21,7 @@ response = requests.get('https://api.plusclouds.com/v2/iaas/virtual-machines/met
 person_dict = response.json() #json to dict
 password= person_dict['data']['password']
 readablePassword = password
-password = sha256(''.encode()).hexdigest()
+password = sha256(readablePassword.encode()).hexdigest()
 isChanged = False
 fileFlag = os.path.exists('/var/log/passwordlogs.txt')
 
