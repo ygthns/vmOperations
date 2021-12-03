@@ -53,7 +53,7 @@ else:
     f.close()
 
 isExtended = os.path.exists('/var/log/isExtended.txt')
-if (total_disk != 10240):
+if (total_disk != '10240'):
     if (isExtended == False):
             extend_disk()
 
