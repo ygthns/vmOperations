@@ -66,6 +66,10 @@ if (total_disk != '10240'):
             extend_disk()
 else:
     print('No need for disk extend.')
+    file = open("/var/log/isExtended.txt", "w+")
+    file.write('0')
+    file.close()
+    
 isExtended = file_read("/var/log/isExtended.txt")
 if (isExtended == '1'):
     file = open("/var/log/isExtended.txt", "w+")
