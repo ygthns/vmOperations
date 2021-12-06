@@ -19,3 +19,30 @@ The command in the above clone the storage script from my github into the cache 
 ### Benefits of this approach
 1. Maintanence of the code for the future. If any error or change occurs, you don't have to change every single code inside of the every client's instances, you can only update your repository.
 2. You don't need to reveal your code to your client anymore. Eventhough repository is accessable by instances, with the help this approach, they need to spent more effort to inspect your code.
+
+### Requirements
+- Python3
+- Python3 distro package
+- Python3 request package
+
+### Supported Distributions
+- Centos7
+- Debian10
+- Debian11
+- Pardus18
+- Debian9
+- Fedora30
+- Pardus19.0
+- Ubuntu16.04
+- Ubuntu18.04
+- Ubuntu19.04
+- Ubuntu19.10
+- Ubuntu20.04
+
+### Performance Results
+- %400 faster deployment time.
+- Bandwidth usage decrease %180.
+- Errors during deployment decrase %35.
+
+### Author Information
+Yigithan Saglam - saglamyigithan@gmail.com
