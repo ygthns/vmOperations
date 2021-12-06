@@ -1,6 +1,6 @@
-# vmOperations
+## Virtual Machine Deployment Wizard Agent Script
 This python script has been written in order to decrease virtual machine deployment times, and costs for a cloud provider. Code developed for being used as agent scripts in client instances, which means this codes need to be placed inside of the virtual machine image, and triggered by crontab in every 30 seconds. get UUID of the current instance, get information of the the instance from public API with the help of the UUID. If it detects any changes, then it applies changes.
-What Changes?
+# What Changes?
 1- Storage size.
 2- Hostname changes.
 3- Password changes.
@@ -16,6 +16,6 @@ exec(data_url)
 ```
 The command in the above clone the storage script from my github into the cache of the client's instance, execute it, and remove it.
 
-Benefits of this approach
+# Benefits of this approach
 1- Maintanence of the code for the future. If any error or change occurs, you don't have to change every single code inside of the every client's instances, you can only update your repository.
 2- You don't need to reveal your code to your client anymore. Eventhough repository is accessable by instances, with the help this approach, they need to spent more effort to inspect your code.
