@@ -1,5 +1,5 @@
 # Virtual Machine Deployment Wizard Agent Script
-This python script has been written in order to decrease virtual machine deployment times, and costs for a cloud provider. Code developed for being used as agent scripts in client instances, which means this codes need to be placed inside of the virtual machine image, and triggered by crontab in every 30 seconds. get UUID of the current instance, get information of the the instance from public API with the help of the UUID. If it detects any changes, then it applies changes.
+This python script has been written in order to decrease virtual machine deployment times, and costs for a cloud provider. Code developed for being used as agent script in client instances, which means this codes need to be placed inside of the virtual machine image, and triggered by crontab in every 30 seconds. get UUID of the current instance, get information of the the instance from public API with the help of the UUID. If it detects any changes, then it applies changes.
 ### What Changes?
 1. Storage size.
 2. Hostname changes.
