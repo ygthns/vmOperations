@@ -72,7 +72,7 @@ else:
     
 isExtended = file_read("/var/log/isExtended.txt")
 if (isExtended == '1'):
+    os.system(resizeCall)
     file = open("/var/log/isExtended.txt", "w+")
     file.write('0')
     file.close()
-    os.system(resizeCall)
