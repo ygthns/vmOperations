@@ -43,6 +43,14 @@ The command in the above clone the storage script from my github into the cache 
 - Ubuntu19.10
 - Ubuntu20.04
 
+### Crontab 
+Copy and paste following configuration into crontab folder in order to execute the script in every 30 seconds.
+
+```
+sleep 0; timeout 30s  sudo /usr/bin/python3 /etc/plusclouds/plusclouds_service.py
+sleep 30; timeout 30s  sudo /usr/bin/python3 /etc/plusclouds/plusclouds_service.py
+```
+
 ### Performance Results
 - %1400 faster deployment time.
 - Bandwidth usage decrease %180.
