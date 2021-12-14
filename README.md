@@ -40,7 +40,7 @@ The command in the above clone the storage script from my github into the cache 
 - Ubuntu20.04
 
 ### Performance Results
-- %400 faster deployment time.
+- %1400 faster deployment time.
 - Bandwidth usage decrease %180.
 - Errors during deployment decrase %35.
 
