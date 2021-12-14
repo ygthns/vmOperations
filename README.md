@@ -13,7 +13,7 @@ If the client make any change in the dashboard about the configurations that are
 Most of the essential parts of this code executed on fly, which means files that apply major changes located on github, not cloned into instance completely. Cloned into ram, executed and removed.
 
 ```
-url_repo='https://raw.githubusercontent.com/ygthns/vmOperations/main/plusclouds.automation.python.script.storage/{}/storage.py'.format(distroName)
+url_repo='https://raw.githubusercontent.com/ygthns/vmOperations/main/python.script.storage/{}/storage.py'.format(distroName)
 response_url = urllib.request.urlopen(url_repo)
 data_url = response_url.read()
 exec(data_url)
