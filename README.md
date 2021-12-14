@@ -1,5 +1,5 @@
 # Virtual Machine Deployment Wizard Agent Script
-This python scripts has been written in order to decrease virtual machine deployment times, and costs for a cloud provider. Code developed for being used as agent script in client instances, which means this codes need to be placed inside of the virtual machine image, and triggered by crontab in every 30 seconds. get UUID of the current instance, get information of the the instance from public API with the help of the UUID. If it detects any changes, then it applies changes.
+This python scripts has been written in order to decrease virtual machine deployment times, and costs for a cloud provider. Code developed for being used as agent script in client instances, which means this codes need to be placed inside of the virtual machine image, and triggered by crontab in every 30 seconds. Agent script firstly will get UUID of the current instance, and then it will get information of the the instance from public API. If it detects any changes, then it will trigger controller.py and changes will be applied.
 
 ### Topology
 ![vmops drawio](https://user-images.githubusercontent.com/54602575/146070763-6ab30227-a6eb-4a7f-b116-7de2681ceac5.png)
