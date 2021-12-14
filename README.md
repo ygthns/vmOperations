@@ -47,8 +47,8 @@ The command in the above clone the storage script from my github into the cache 
 Copy and paste following configuration into crontab folder in order to execute the script in every 30 seconds.
 
 ```
-sleep 0; timeout 30s  sudo /usr/bin/python3 /etc/plusclouds/plusclouds_service.py
-sleep 30; timeout 30s  sudo /usr/bin/python3 /etc/plusclouds/plusclouds_service.py
+sleep 0; timeout 30s  sudo /usr/bin/python3 /etc/plusclouds/agent.py
+sleep 30; timeout 30s  sudo /usr/bin/python3 /etc/plusclouds/agent.py
 ```
 
 ### Performance Results
